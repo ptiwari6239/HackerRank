@@ -26,7 +26,7 @@ def compareTriplets(a, b):
     print(point_a , point_b)        
 
 
-    pass
+    
     # Write your code here
 
 if __name__ == '__main__':
