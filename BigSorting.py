@@ -12,42 +12,42 @@ import sys
 # The function is expected to return a STRING_ARRAY.
 # The function accepts STRING_ARRAY unsorted as parameter.
 #
+def BigSorting(unsorted):
+    def converted(array):
+        for i in range(0, len(array)):
+            array[i] = int(array[i])
+        return array
 
-def bigSorting(unsorted):
-    for i in range(0,len(unsorted)):
-        unsorted[i] = int(unsorted[i])
-    return unsorted
-    def swap(arr,a,b):
-        a[i] ,b[i] = b[i],a[i]
-        return arr 
-    leng = len(unsorted)
-    last_idx = n - 1
-    arr_range = n 
-    for j in range(leng):
-        Max = max(unsorted[0:arr_range])
+    def swap(arr, a, b):
+        arr[a], arr[b] = arr[b], arr[a]
+        return arr
+    converted(unsorted)
+    n = len(unsorted)
+    lst_idx = n - 1
+    arrr_range = n
+    for i in range(n):
+        Max = max(unsorted[0:arrr_range])
         Max_idx = unsorted.index(Max)
-        swap(unsorted,Max,last_idx)
-        last_idx = last_idx - 1 
-        arr_range = arr_range - 1
-    for ele in range(leng):
-        print(unsorted[ele],end = '\n')       
-         
-    # Write your code here
+        swap(unsorted, lst_idx, Max_idx)
+        lst_idx = lst_idx - 1
+        arrr_range = arrr_range - 1
+    for ele in range(n):
+        print(unsorted[ele], end='\n')
+
+
+
+
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    
 
-    n = int(input().strip())
+    num = int(input().strip())
 
     unsorted = []
 
-    for _ in range(n):
+    for _ in range(num):
         unsorted_item = input()
         unsorted.append(unsorted_item)
 
-    result = bigSorting(unsorted)
+    result = BigSorting(unsorted)
 
-    fptr.write('\n'.join(result))
-    fptr.write('\n')
-
-    fptr.close()
